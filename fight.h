@@ -1,7 +1,7 @@
 #pragma once
 
-int	fight_start(t_char *character, t_enemy *enemy);
-int	fight_poison_tick(t_char *, t_enemy *);
+int fight_start(t_char* character, t_enemy* enemy);
+int fight_poison_tick(t_char*, t_enemy*);
 
 typedef enum {
   YOU_DEAD,

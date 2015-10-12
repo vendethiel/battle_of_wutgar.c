@@ -13,8 +13,8 @@ void message_poison_fade(t_poison* poison) {
 }
 
 void message_fight_against(t_enemy* enemy, int chim_nbr) {
-  printf("You're fighting against %s with %i chimaera%s",
-      enemy->name, chim_nbr, chim_nbr > 1 ? "s" : "");
+  printf("You're fighting against %s with %i chimaera%s", enemy->name, chim_nbr,
+         chim_nbr > 1 ? "s" : "");
 }
 
 void message_otd(t_char* character) {

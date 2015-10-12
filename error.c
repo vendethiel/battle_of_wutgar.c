@@ -8,8 +8,7 @@ void* xmalloc(size_t size) {
   return ptr;
 }
 
-void	error_fatal(char *msg)
-{
-	printf(COLOR_RED "%s", msg);
-	exit(1);
+void error_fatal(char* msg) {
+  printf(COLOR_RED "%s", msg);
+  exit(1);
 }

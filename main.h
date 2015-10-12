@@ -14,6 +14,6 @@
 #include "colors.h"
 
 void* xmalloc(size_t);
-char *readLine();
-int	rand_between(int a, int b);
-void error_fatal(char *msg);
+char* readLine();
+int rand_between(int a, int b);
+void error_fatal(char* msg);
