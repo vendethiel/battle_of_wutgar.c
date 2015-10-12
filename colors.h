@@ -1,0 +1,5 @@
+#define COLOR_RED "\x1B[0;31m"
+#define COLOR_BLUE "\x1B[0;34m"
+#define COLOR_GREEN "\x1B[0;32m"
+#define COLOR_PURPLE "\x1B[0;35m"
+#define COLOR_CLEAR "\033[0m"
