@@ -12,10 +12,11 @@ typedef enum {
   ENEMY_ATTACK,
 } action_type;
 
+/* make sure they're disjoint from fight.h's fight_check_state */
 typedef enum {
-  CONTINUE_TURN,
-  CONSUME_TURN,
-  QUIT_GAME,
+  CONTINUE_TURN = 100,
+  CONSUME_TURN = 101,
+  QUIT_GAME = 102,
 } action_return;
 
 typedef struct s_action {

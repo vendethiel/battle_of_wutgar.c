@@ -55,7 +55,7 @@ int attack_enemy_earthquake(t_char* character, t_enemy* enemy) {
 int attack_enemy_doom(t_char* character, t_enemy* enemy) {
   int dmg;
 
-  printf(enemy->name);
+  printf("%s", enemy->name);
   if (enemy->mp >= 5) {
     dmg = enemy->dmg_mult * 11;
     character->hp -= dmg;

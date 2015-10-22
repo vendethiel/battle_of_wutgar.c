@@ -1,10 +1,10 @@
-CC = gcc
+CC = clang
 
 SRC = $(wildcard *.c) $(wildcard */*.c)
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -W -Wall -Werror -pedantic -ansi -std=c99 -g
+CFLAGS = -W -Wall -Werror -pedantic -std=c99 -g
 
 NAME = ragnarok
 
@@ -14,10 +14,10 @@ $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LIBS) $(CFLAGS)
 
 clean:
-	rm $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

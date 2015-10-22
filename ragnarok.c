@@ -10,7 +10,8 @@ void begin_quest(t_char* character) {
 
   mob_count = rand_between(1, 3);
   for (i = 0; i < mob_count; ++i) {
-    if (YOU_DEAD == fight_start(character, enemy_create(NORMAL)))
+    int ret = fight_start(character, enemy_create(NORMAL));
+    if (QUIT_GAME == ret || YOU_DEAD == ret)
       return;
   }
   fight_start(character, enemy_create(BOSS));
