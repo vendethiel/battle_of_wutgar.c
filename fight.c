@@ -64,13 +64,17 @@ t_action* fight_get_action() {
   return action;
 }
 
+/* we should consume QUIT_GAME as well, it's handled by fight_start in the loop */
+int enemy_has_turn(action_return ret) {
+  return ret != CONTINUE_TURN;
+}
+
 int fight_start(t_char* character, t_enemy* enemy) {
   t_action* action;
   int ret;
 
   message_fight_against(enemy, chim_for(character));
-  for (;;) {
-    action = NULL;
+  for (;; action = NULL) { /* reset action */
     message_fight_turn_start();
     if (character->poison && poison_stun(character->poison))
       printf(PSN_STUN);
@@ -81,8 +85,7 @@ int fight_start(t_char* character, t_enemy* enemy) {
       return ret;
     if (action && special_disallow(action, character))
       printf("You can only use your class' special attack !\n");
-    else if (action ? (ret = action->fn(character, enemy))
-                    : (ret = CONSUME_TURN)) /* poisoned => skip turn */
+    else if (!action || enemy_has_turn(ret = action->fn(character, enemy)))
     {
       if (QUIT_GAME == ret ||
           YOU_KEEP_PLAYING != (ret = chim_play(character, enemy)))
