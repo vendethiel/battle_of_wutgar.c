@@ -7,7 +7,7 @@ t_chim* chim_create() {
 
   chim = xmalloc(sizeof(t_chim));
   chim->name = strdup("Chimaera #i");
-  chim->name[10] = ++i;
+  chim->name[10] = '0' + ++i; /* safe only because we know there are 3 chims max */
   chim->behavior = rand_between(0, 3) ? ATTACKING : HEALING;
   chim->mp = rand_between(3, chim->behavior == HEALING ? 15 : 5);
   chim->power = rand_between(3, 8);
